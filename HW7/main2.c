@@ -1,7 +1,18 @@
-int main(){
-for(int y=1,x=1; y<=9 ;x++){
-printf("%d*%d=%d\t",y,x,y*x);
-x<9 ? x:(x=0,y++,printf("\n"));
-}
-return 0;
+#include<stdio.h>
+#include<math.h>
+
+int main()
+{
+ long int i, n=1000000;
+ double sum=0.0, term, pi;
+ 
+ for(i=0;i< n;i++)
+ {
+  term = pow(-1, i) / (2*i+1);
+  sum += term;
+ }
+ pi = 4 * sum;
+
+ printf("\nPI = %.6lf", pi);
+ return 0;
 }
