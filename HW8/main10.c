@@ -1,12 +1,16 @@
 #include<stdio.h>
+int get_digit(int n){
+    int sum=0;
+    while(n!=0){
+		sum=sum*10+n%10;
+		n=n/10; 
+	}
+	printf("%d",sum);
+}
 int main()
 {
-	int a,b=0;
-	scanf("%d",&a);
-	while(a!=0){
-		b=b*10+a%10;
-		a=a/10; 
-	        }
-	printf("%d",b);
+	int n=1234,sum=0;
+	get_digit(n);
+	
 	return 0;
 }
