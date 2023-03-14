@@ -1,0 +1,17 @@
+01  #include <stdio.h>
+02  
+03  int main(){
+04  	FILE  *fp= fopen("main.c", "r+"), *fpw = fopen("main2.txt", "w+");
+05  	int c, row = 1;
+06  	
+07  	fprintf(fpw,"01  ");
+08  	while ((c = getc(fp)) != EOF)
+09  	    if(c=='\n'){
+10  	        fprintf(fpw,"\n%02d  ", ++row);
+11  	    }else{
+12  	        fprintf(fpw,"%c", c);
+13  	    }
+14  	fclose(fp);
+15  	fclose(fpw);
+16  	return 0;
+17  }
