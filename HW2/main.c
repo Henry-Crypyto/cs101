@@ -5,12 +5,14 @@ int main(){
 	int c, row = 1;
 	
 	fprintf(fpw,"01  ");
-	while ((c = getc(fp)) != EOF)
-	    if(c=='\n'){
+	while ((c = getc(fp)) != EOF){
+        if(c=='\n'){
 	        fprintf(fpw,"\n%02d  ", ++row);
 	    }else{
 	        fprintf(fpw,"%c", c);
 	    }
+	}
+	   
 	fclose(fp);
 	fclose(fpw);
 	return 0;
